@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:finance_management/app/data/local/secure_storage/secure_storage.dart';
 import 'package:finance_management/app/module/home/view/screen/authentication_screen/Auth_main.dart';
 import 'package:finance_management/app/module/home/view/screen/home_screen/home_screen.dart';
@@ -8,6 +10,7 @@ class SplashController extends GetxController {
   RxBool isSkip = false.obs;
 
   Future<void> splashFun() async {
+    log("===========================");
     var onbordingStatus = await LocalStorage().readData(key: "onbording");
     var loginStatus = await LocalStorage().readData(key: "login");
     await Future.delayed(Duration(milliseconds: 50));
